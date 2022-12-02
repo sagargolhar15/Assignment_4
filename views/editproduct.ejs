@@ -1,0 +1,46 @@
+<%- include('./partials/nav.ejs') %>
+    <form action="/editproduct" method="post" enctype="multipart/form-data">
+        <div class="container-fluid p-3">
+            <div class="row">
+               
+                <div class="col-md-12 text-center">
+                    <h3 class="alert-success p-2">Edit Product</h3>
+                </div>
+                <input type="hidden" name="id" value="<%=_id%>">
+                <input type="hidden" name="img" value="<%=product_image%>">
+    
+                <div class="col-md-12 text-dark">
+                    <div class="row mt-2">
+                        <div class="col-6">
+                            <label for="exampleInputEmail1" class="form-label fw-bold">Product Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                name="product_name" value="<%=product_name%>" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputEmail1" class="form-label fw-bold">Product Price</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" name="product_price" value="<%=product_price%>" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputEmail1" class="form-label fw-bold">Product Duplicate Price</label>
+                            <input type="number" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" name="product_d_price" value="<%=product_d_price%>" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputPassword1" class="form-label fw-bold">Product Description</label>
+                            <textarea class="form-control" name="product_desc"><%=product_desc%></textarea>
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputPassword1" class="form-label fw-bold">Product Image</label>
+                            <input type="file" class="form-control" name="image" accept="image/*">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="btn btn-primary mt-3 mx-auto d-block">Edit Product</button>
+
+        </div>
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
